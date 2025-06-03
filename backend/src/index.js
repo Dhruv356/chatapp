@@ -6,7 +6,7 @@ import authRoutes from './routes/auth.route.js';
 import messageRoutes from './routes/message.route.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import { app ,server} from './lib/Socket.js';
+import { app ,server} from './lib/temp.js';
 import path from 'path';
 
 dotenv.config();

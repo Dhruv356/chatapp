@@ -2,7 +2,7 @@ import { text } from "express";
 import Message from "../models/message.model.js";
 import User from "../models/user.model.js";
 import cloudinary from '../lib/cloudinary.js';
-import { getReceiverSocketId, io} from "../lib/Socket.js";
+import { getReceiverSocketId, io} from "../lib/temp.js";
 export const getUserForSidebar = async (req, res) => {
 
     try {
