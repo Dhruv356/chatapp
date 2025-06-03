@@ -1,7 +1,7 @@
 /* Root layout background */
 .home-screen {
   height: 100vh;
-  background-color: #121216; /* Your custom dark surface */
+  background-color: #121217; /* Your custom dark surface */
   display: flex;
   justify-content: center;
   align-items: flex-start;
