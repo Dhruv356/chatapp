@@ -1,0 +1,64 @@
+.no-chat-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  background-color: #121216; /* Match chat-card background */
+  color: #e0e0e0; /* Light gray text for readability on dark bg */
+}
+
+.no-chat-content {
+  max-width: 28rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #e0e0e0; /* Consistent light gray */
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon-bounce {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  background-color: rgba(248, 64, 64, 0.15); /* Soft red accent with slight transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s infinite;
+}
+
+.chat-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #f84040; /* Vibrant red accent */
+}
+
+.welcome-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e0e0e0; /* Light gray, clear on dark bg */
+}
+
+.welcome-text {
+  color: #9999aa; /* Muted gray with bluish tint for subtlety */
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

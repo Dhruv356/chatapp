@@ -1,0 +1,177 @@
+.profile-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2.5rem 3rem;
+  background: linear-gradient(135deg, #1c1c24 0%, #121216 100%);
+  color: #e4e4e8;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.profile-header h1 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.3rem;
+  color: #f84040; /* red accent */
+}
+
+.profile-header p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #b0b0b8;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(248, 64, 64, 0.35);
+  transition: box-shadow 0.3s ease;
+}
+
+.avatar-wrapper:hover {
+  box-shadow: 0 6px 20px rgba(248, 64, 64, 0.6);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #2a2a32;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.avatar-wrapper:hover .avatar-img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(248, 64, 64, 0.7);
+}
+
+.avatar-upload-btn {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background-color: #2a2a32;
+  border: 2px solid #f84040;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-upload-btn:hover:not(.disabled) {
+  background-color: #f84040;
+  transform: scale(1.15);
+}
+
+.camera-icon {
+  width: 20px;
+  height: 20px;
+  color: #e4e4e8;
+  transition: color 0.3s ease;
+}
+
+.avatar-upload-btn:hover:not(.disabled) .camera-icon {
+  color: #121216;
+}
+
+.hidden {
+  display: none;
+}
+
+.upload-status {
+  font-size: 14px;
+  margin-top: 1.2rem;
+  color: #b0b0b8;
+  text-align: center;
+  font-style: italic;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.user-info {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+ 
+  border-radius: 12px;
+  border: 1px solid #2a2a32;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.info-item label {
+  font-weight: 600;
+  color: #f84040;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+/* Styled readonly inputs */
+.readonly-input {
+  width: 90%;
+  background-color: #1a1a22;
+  color: #f2f2f5;
+  border: 1px solid #39394a;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  cursor: default;
+  transition: border 0.2s ease;
+}
+
+.readonly-input:focus {
+  border-color: #f84040;
+}
+
+/* Display-only items */
+.display-item span {
+  color: #e4e4e8;
+  font-size: 1rem;
+  background-color: #1a1a22;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Account Status Pill */
+.status-pill {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: white;
+  display: inline-block;
+}
+
+.status-active {
+  background-color: #4caf50; /* green */
+}
+
+.status-inactive {
+  background-color: #f44336; /* red */
+}

@@ -1,0 +1,88 @@
+.message-skeleton-container {
+  flex: 1;
+  height: 100%; /* ensure it fills available vertical space */
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #1f2937;
+}
+
+
+.skeleton-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  gap: 0.25rem;
+}
+
+.skeleton-message.start {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.skeleton-message.end {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.skeleton-avatar-container {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.skeleton-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #374151;
+}
+
+.skeleton-meta {
+  margin-bottom: 0.25rem;
+}
+
+.skeleton-name {
+  height: 0.6rem;
+  width: 3rem;
+  border-radius: 4px;
+  background-color: #374151;
+}
+
+.skeleton-bubble {
+  height: 2.5rem;
+  width: 200px;
+  border-radius: 0.75rem;
+  background-color: #374151;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 1.3s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

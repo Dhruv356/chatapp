@@ -1,0 +1,156 @@
+/* Layout */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f3f4f6;
+}
+
+.left-panel {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo Section */
+.logo-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-box {
+  width: 48px;
+  height: 48px;
+  background-color: #e0e7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.logo-icon {
+  color: #3b82f6;
+  width: 24px;
+  height: 24px;
+}
+
+.title {
+    color: #4b5563;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 0.25rem;
+}
+
+.label-text {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Input with icon */
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  color: #9ca3af;
+}
+
+.input {
+  width: 90%;
+  padding: 10px 12px 10px 36px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* Show password checkbox */
+.show-password {
+    color: #000;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 10px;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2563eb;
+}
+
+.submit-btn:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Login link section */
+.div {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

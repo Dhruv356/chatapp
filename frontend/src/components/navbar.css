@@ -1,0 +1,56 @@
+/* Premium Black Navbar */
+.navbar {
+  background-color: #121216; /* dark surface */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #2a2a32;
+  color: #f2f2f5;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.navbar-logo .logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6366f1; /* premium indigo */
+  text-decoration: none;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #a3a3ab;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #f2f2f5;
+}
+
+/* Logout button */
+.nav-button {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.nav-button:hover {
+  color: #f87171;
+}

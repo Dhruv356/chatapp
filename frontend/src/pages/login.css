@@ -1,0 +1,155 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0b0f; /* Premium black */
+  padding: 2rem;
+  color: #f2f2f5;
+}
+
+.left-panel {
+  width: 100%;
+  max-width: 400px;
+  background: #121216;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-box {
+  width: 48px;
+  height: 48px;
+  background-color: #2a2a32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.logo-icon {
+  color: #6366f1;
+  width: 24px;
+  height: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.subtitle {
+  color: #a3a3ab;
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 0.25rem;
+}
+
+.label-text {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  color: #6b7280;
+}
+
+.input {
+  width: 90%;
+  padding: 10px 12px 10px 36px;
+  font-size: 14px;
+  border: 1px solid #2a2a32;
+  background-color: #1a1a1f;
+  color: #f2f2f5;
+  border-radius: 6px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #6366f1;
+}
+
+.show-password {
+    color: #f2f2f5;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.submit-btn {
+  padding: 10px;
+  background-color: #6366f1;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #818cf8;
+}
+
+.submit-btn:disabled {
+  background-color: #4f46e5;
+  cursor: not-allowed;
+}
+.redirect-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 14px;
+  color: #a3a3ab;
+}
+
+.signup-link {
+  color: #6366f1;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+  color: #818cf8;
+}
