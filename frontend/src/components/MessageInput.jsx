@@ -1,12 +1,14 @@
 import { useRef, useState } from "react";
 import { useChatStore } from "../store/useChatStore";
-import { Image, Send, X } from "lucide-react";
+import { Image, Send, X, Smile } from "lucide-react";
 import toast from "react-hot-toast";
-import "./messageinput.css"; // Import plain CSS
+import Picker from "emoji-picker-react"; // different emoji picker
+import "./messageinput.css";
 
 const MessageInput = () => {
   const [text, setText] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const fileInputRef = useRef(null);
   const { sendMessage } = useChatStore();
 
@@ -42,9 +44,14 @@ const MessageInput = () => {
       setText("");
       setImagePreview(null);
       if (fileInputRef.current) fileInputRef.current.value = "";
+      setShowEmojiPicker(false);
     } catch (error) {
       console.error("Failed to send message:", error);
     }
+  };
+
+  const onEmojiClick = (emojiData) => {
+    setText((prev) => prev + emojiData.emoji);
   };
 
   return (
@@ -52,16 +59,8 @@ const MessageInput = () => {
       {imagePreview && (
         <div className="image-preview-wrapper">
           <div className="image-preview">
-            <img
-              src={imagePreview}
-              alt="Preview"
-              className="preview-img"
-            />
-            <button
-              onClick={removeImage}
-              className="remove-image-btn"
-              type="button"
-            >
+            <img src={imagePreview} alt="Preview" className="preview-img" />
+            <button onClick={removeImage} className="remove-image-btn" type="button">
               <X size={16} />
             </button>
           </div>
@@ -77,6 +76,16 @@ const MessageInput = () => {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
+
+          <button
+            type="button"
+            className="emoji-btn"
+            onClick={() => setShowEmojiPicker((prev) => !prev)}
+            aria-label="Toggle Emoji Picker"
+          >
+            <Smile size={20} />
+          </button>
+
           <input
             type="file"
             accept="image/*"
@@ -84,6 +93,7 @@ const MessageInput = () => {
             ref={fileInputRef}
             onChange={handleImageChange}
           />
+
           <button
             type="button"
             className={`image-select-btn ${imagePreview ? "active" : ""}`}
@@ -92,6 +102,21 @@ const MessageInput = () => {
             <Image size={20} />
           </button>
         </div>
+
+        {showEmojiPicker && (
+          <div className="emoji-picker-wrapper">
+            <button
+      type="button"
+      className="emoji-picker-close-btn"
+      onClick={() => setShowEmojiPicker(false)}
+      aria-label="Close Emoji Picker"
+    >
+      ×
+    </button>
+            <Picker onEmojiClick={onEmojiClick} disableAutoFocus={true} native={true} />
+          </div>
+        )}
+
         <button
           type="submit"
           className="send-btn"

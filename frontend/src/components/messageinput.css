@@ -1,8 +1,8 @@
 .message-input-container {
- 
   padding: 16px;
   width: 100%;
   box-sizing: border-box;
+  position: relative; /* for absolute emoji picker */
 }
 
 .image-preview-wrapper {
@@ -32,7 +32,7 @@
   right: -6px;
   width: 20px;
   height: 20px;
-  background-color: #d1d5db; /* base-300 / gray-300 */
+  background-color: #d1d5db; /* gray-300 */
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -40,6 +40,11 @@
   align-items: center;
   justify-content: center;
   padding: 0;
+  transition: background-color 0.2s ease;
+}
+
+.remove-image-btn:hover {
+  background-color: #ef4444; /* red-500 */
 }
 
 .remove-image-btn svg {
@@ -70,6 +75,8 @@
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.2s ease-in-out;
+  background-color: #fff; /* light background for better contrast */
+  color: #111;
 }
 
 .message-text-input:focus {
@@ -123,4 +130,64 @@
 
 .send-btn:not(:disabled):hover {
   background-color: #059669; /* emerald-600 */
+}
+
+/* Emoji picker wrapper styles */
+.emoji-picker-wrapper {
+  position: absolute;
+  bottom: 60px; /* above input area */
+  right: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  width: 320px;
+  max-width: 90vw;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Close button inside emoji picker */
+.emoji-picker-close-btn {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  color: #6b7280; /* gray-500 */
+  font-size: 18px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.emoji-picker-close-btn:hover {
+  background-color: #ef4444; /* red-500 */
+  color: white;
+}
+/* Emoji picker container */
+.emoji-picker-wrapper {
+  position: absolute;
+
+}
+
+/* Emoji toggle button */
+.emoji-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.emoji-btn:hover {
+  color: #f84040;
 }
