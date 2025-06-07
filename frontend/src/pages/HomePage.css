@@ -1,6 +1,6 @@
 /* Root layout background */
 .home-screen {
-  height: 100vh;
+  height: 110vh;
   background-color: #121217; /* Your custom dark surface */
   display: flex;
   justify-content: center;
@@ -13,14 +13,14 @@
 /* Wrapper centers the whole app and limits max width */
 .home-wrapper {
   width: 100%;
-  max-width: 1200px; /* Match your WhatsApp max width */
+  max-width: 1500px; /* Match your WhatsApp max width */
   display: flex;
   justify-content: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.6);
   border-radius: 0.5rem; /* Rounded corners */
   overflow: hidden;
   background-color: #18181f; /* Slightly lighter for contrast */
-  height: calc(100vh - 4rem);
+  height: 100vh
 }
 
 /* Card container for the full app */

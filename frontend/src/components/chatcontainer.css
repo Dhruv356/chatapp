@@ -9,20 +9,18 @@
   position: relative;
 }
 
-
 /* Scrollable messages area */
 .chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1rem;
+  flex: 1;              /* fill available vertical space */
+  overflow-y: auto;     /* enable vertical scrolling */
+  padding: 1rem 1rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  scrollbar-width: thin;
-  min-height: 0; /* ensures it doesn't collapse */
+  min-height: 0;        /* prevents collapse */
   position: relative;
+  scrollbar-width: thin;
 }
-
 
 .chat-messages::-webkit-scrollbar {
   width: 8px;
@@ -63,6 +61,8 @@
   word-wrap: break-word;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   user-select: text;
+  /* smooth text wrap */
+  white-space: pre-wrap;
 }
 
 /* Sent (authUser) bubble */
@@ -133,25 +133,71 @@
   font-style: italic;
   margin-top: 1rem;
   font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* Responsive tweaks */
-@media (max-width: 640px) {
+
+/* Small phones and below ~ 320-480px */
+@media (max-width: 480px) {
   .message-bubble {
-    max-width: 75%;
-    font-size: 0.85rem;
+    max-width: 85%;         /* more width for small screens */
+    font-size: 0.9rem;      /* slightly larger font for readability */
+    padding: 0.8rem 1rem;
   }
   .avatar {
     width: 28px;
     height: 28px;
   }
+  .chat-messages {
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+  }
 }
-.empty-msg {
-  text-align: center;
-  color: #888;
-  font-style: italic;
-  font-size: 0.95rem;
-  margin-top: auto;
-  margin-bottom: auto;
-  opacity: 0.8;
+
+/* Medium phones & portrait tablets ~ 481-767px */
+@media (max-width: 767px) {
+  .message-bubble {
+    max-width: 75%;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .chat-messages {
+    padding: 0.85rem 1rem 0.85rem 1rem;
+  }
+}
+
+/* Tablets and up ~ 768-1024px */
+@media (max-width: 1024px) {
+  .message-bubble {
+    max-width: 65%;
+    font-size: 0.875rem;
+  }
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .chat-messages {
+    padding: 1rem 1rem 1rem 1rem;
+  }
+}
+
+/* Default desktop styles */
+@media (min-width: 1025px) {
+  .message-bubble {
+    max-width: 60%;
+    font-size: 0.875rem;
+  }
+  .avatar {
+    width: 34px;
+    height: 34px;
+  }
+  .chat-messages {
+    padding: 1rem 1rem 1rem 1rem;
+  }
 }
