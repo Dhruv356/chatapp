@@ -191,3 +191,10 @@
 .emoji-btn:hover {
   color: #f84040;
 }
+/* Hide emoji toggle and picker on small screens */
+@media (max-width: 640px) {
+  .emoji-btn,
+  .emoji-picker-wrapper {
+    display: none !important;
+  }
+}
