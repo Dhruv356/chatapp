@@ -1,49 +1,14 @@
-import React, { useEffect } from 'react';
-import { create } from 'zustand';
+import React from 'react';
+import { useThemeStore } from '../store/useThemeStore';
+import { themes } from '../Theme';
 
-// ✅ Theme options
-const themes = {
-  light: {
-    name: 'Light',
-    background: '#ffffff',
-    text: '#111827',
-    primary: '#3b82f6',
-  },
-  dark: {
-    name: 'Dark',
-    background: '#0f172a',
-    text: '#f1f5f9',
-    primary: '#3b82f6',
-  },
-  black: {
-    name: 'Premium Black',
-    background: '#0b0b0f',
-    text: '#f2f2f5',
-    primary: '#6366f1',
-  },
-};
-
-// ✅ Zustand store
-const useThemeStore = create((set) => ({
-  theme: 'dark',
-  setTheme: (themeKey) => set({ theme: themeKey }),
-}));
-
-// ✅ Settings Page Component
 const Settings = () => {
   const { theme, setTheme } = useThemeStore();
-  const currentTheme = themes[theme];
-
-  // Apply theme on body
-  useEffect(() => {
-    document.body.style.backgroundColor = currentTheme.background;
-    document.body.style.color = currentTheme.text;
-  }, [currentTheme]);
 
   return (
     <div style={styles.container}>
       <h1 style={styles.heading}>Theme Settings</h1>
-      <p style={styles.subtext}>Select a color theme for your chat app:</p>
+      <p style={styles.subtext}>Select a color theme for your app:</p>
 
       <div style={styles.options}>
         {Object.entries(themes).map(([key, t]) => (
@@ -66,7 +31,6 @@ const Settings = () => {
   );
 };
 
-// ✅ Inline Styles
 const styles = {
   container: {
     maxWidth: '600px',

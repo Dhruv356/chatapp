@@ -1,9 +1,10 @@
-/* Premium Black Navbar */
+/* Theme-aware Navbar using CSS variables */
 .navbar {
-  background-color: #121216; /* dark surface */
+  background-color: var(--bg);
   padding: 1rem 2rem;
-  border-bottom: 1px solid #2a2a32;
-  color: #f2f2f5;
+  border-bottom: 1px solid var(--primary);
+  color: var(--text);
+  transition: all 0.3s ease;
 }
 
 .navbar-container {
@@ -18,7 +19,7 @@
 .navbar-logo .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #6366f1; /* premium indigo */
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -31,20 +32,20 @@
 
 .nav-link {
   text-decoration: none;
-  color: #a3a3ab;
+  color: var(--text);
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: #f2f2f5;
+  color: var(--primary);
 }
 
 /* Logout button */
 .nav-button {
   background: none;
   border: none;
-  color: #ef4444;
+  color: var(--primary);
   font-weight: 500;
   cursor: pointer;
   padding: 0;

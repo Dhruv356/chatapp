@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuthStore } from '../store/useAuthStore';
 import { Link } from 'react-router-dom';
-import './navbar.css'; // ✅ Import the CSS below
+import './navbar.css'; // ✅ Now fully uses CSS variables
 
 const Navbar = () => {
   const { logout, authUser } = useAuthStore();
@@ -9,19 +9,29 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="navbar-container">
+        
         {/* Logo */}
         <div className="navbar-logo">
-          <Link to="/" className="logo-text">chatty</Link>
+          <Link to="/" className="logo-text">
+            chatty
+          </Link>
         </div>
 
-        {/* Navigation */}
+        {/* Navigation Links */}
         <nav className="navbar-links">
-          <Link to="/settings" className="nav-link">Settings</Link>
+          <Link to="/settings" className="nav-link">
+            Settings
+          </Link>
 
           {authUser && (
             <>
-              <Link to="/profile" className="nav-link">Profile</Link>
-              <button onClick={logout} className="nav-button">Logout</button>
+              <Link to="/profile" className="nav-link">
+                Profile
+              </Link>
+
+              <button onClick={logout} className="nav-button">
+                Logout
+              </button>
             </>
           )}
         </nav>

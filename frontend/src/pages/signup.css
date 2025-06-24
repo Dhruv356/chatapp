@@ -4,17 +4,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--bg, #f3f4f6);
   padding: 2rem;
-  background-color: #f3f4f6;
+  color: var(--text, #111827);
 }
 
+/* Glass Card */
 .left-panel {
   width: 100%;
   max-width: 400px;
-  background: white;
+  background: rgba(255, 255, 255, 0.08);
   padding: 2.5rem;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text, #f1f5f9);
 }
 
 /* Logo Section */
@@ -26,7 +32,7 @@
 .logo-box {
   width: 48px;
   height: 48px;
-  background-color: #e0e7ff;
+  background-color: var(--surface, #e0e7ff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,20 +41,20 @@
 }
 
 .logo-icon {
-  color: #3b82f6;
+  color: var(--primary, #3b82f6);
   width: 24px;
   height: 24px;
 }
 
 .title {
-    color: #4b5563;
+  color: var(--text, #4b5563);
   font-size: 24px;
   font-weight: 700;
   margin-top: 1rem;
 }
 
 .subtitle {
-  color: #6b7280;
+  color: var(--muted, #6b7280);
   font-size: 14px;
 }
 
@@ -71,6 +77,7 @@
 .label-text {
   font-weight: 500;
   font-size: 14px;
+  color: var(--text, #111827);
 }
 
 /* Input with icon */
@@ -89,21 +96,28 @@
 .icon {
   width: 18px;
   height: 18px;
-  color: #9ca3af;
+  color: var(--muted, #9ca3af);
 }
 
 .input {
   width: 90%;
   padding: 10px 12px 10px 36px;
   font-size: 14px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border, #d1d5db);
   border-radius: 6px;
   outline: none;
+  background-color: var(--input-bg, #ffffff);
+  color: var(--input-text, #111);
+  transition: border 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--primary, #3b82f6);
 }
 
 /* Show password checkbox */
 .show-password {
-    color: #000;
+  color: var(--text, #000);
   margin-top: 0.5rem;
   font-size: 0.9rem;
   display: flex;
@@ -114,7 +128,7 @@
 /* Submit Button */
 .submit-btn {
   padding: 10px;
-  background-color: #3b82f6;
+  background-color: var(--primary, #3b82f6);
   color: white;
   font-weight: bold;
   border: none;
@@ -132,7 +146,7 @@
 }
 
 .submit-btn:disabled {
-  background-color: #93c5fd;
+  background-color: var(--disabled, #93c5fd);
   cursor: not-allowed;
 }
 
@@ -141,11 +155,11 @@
   text-align: center;
   margin-top: 1.5rem;
   font-size: 14px;
-  color: #4b5563;
+  color: var(--muted, #4b5563);
 }
 
 .link {
-  color: #3b82f6;
+  color: var(--primary, #3b82f6);
   text-decoration: none;
   font-weight: 500;
   margin-left: 4px;

@@ -3,15 +3,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0b0b0f; /* Premium black */
+  background-color: var(--bg, #f3f4f6);
+  background-size: cover;
+  background-position: center;
   padding: 2rem;
-  color: #f2f2f5;
+  color: var(--text);
 }
 
 .left-panel {
   width: 100%;
   max-width: 400px;
-  background: #121216;
+  background: var(--surface);
   padding: 2.5rem;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -25,7 +27,7 @@
 .logo-box {
   width: 48px;
   height: 48px;
-  background-color: #2a2a32;
+  background-color: var(--border);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +36,7 @@
 }
 
 .logo-icon {
-  color: #6366f1;
+  color: var(--primary);
   width: 24px;
   height: 24px;
 }
@@ -43,10 +45,11 @@
   font-size: 24px;
   font-weight: 700;
   margin-top: 1rem;
+  color: var(--text);
 }
 
 .subtitle {
-  color: #a3a3ab;
+  color: var(--muted);
   font-size: 14px;
 }
 
@@ -68,6 +71,7 @@
 .label-text {
   font-weight: 500;
   font-size: 14px;
+  color: var(--text);
 }
 
 .input-wrapper {
@@ -85,26 +89,27 @@
 .icon {
   width: 18px;
   height: 18px;
-  color: #6b7280;
+  color: var(--muted);
 }
 
 .input {
   width: 90%;
   padding: 10px 12px 10px 36px;
   font-size: 14px;
-  border: 1px solid #2a2a32;
-  background-color: #1a1a1f;
-  color: #f2f2f5;
+  border: 1px solid var(--border);
+  background-color: var(--input-bg, #fff);
+  color: var(--input-text, #111);
   border-radius: 6px;
   outline: none;
+  transition: border-color 0.2s ease;
 }
 
 .input:focus {
-  border-color: #6366f1;
+  border-color: var(--primary);
 }
 
 .show-password {
-    color: #f2f2f5;
+  color: var(--text);
   margin-top: 0.5rem;
   font-size: 0.9rem;
   display: flex;
@@ -114,7 +119,7 @@
 
 .submit-btn {
   padding: 10px;
-  background-color: #6366f1;
+  background-color: var(--primary);
   color: white;
   font-weight: bold;
   border: none;
@@ -132,18 +137,19 @@
 }
 
 .submit-btn:disabled {
-  background-color: #4f46e5;
+  background-color: var(--disabled);
   cursor: not-allowed;
 }
+
 .redirect-text {
   text-align: center;
   margin-top: 1.5rem;
   font-size: 14px;
-  color: #a3a3ab;
+  color: var(--muted);
 }
 
 .signup-link {
-  color: #6366f1;
+  color: var(--primary);
   font-weight: 500;
   text-decoration: none;
   margin-left: 4px;

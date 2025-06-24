@@ -3,7 +3,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: #121216;
+  background-color: var(--bgTranslucent); /* semi-transparent theme bg */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -26,7 +28,7 @@
   width: 8px;
 }
 .chat-messages::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--scrollbarThumb);
   border-radius: 4px;
 }
 .chat-messages::-webkit-scrollbar-track {
@@ -61,13 +63,13 @@
 }
 
 .message-end .message-bubble {
-  background-color: #25d366;
-  color: #000;
+  background-color: var(--primary);
+  color: var(--bg);
   border-bottom-right-radius: 0.3rem;
 }
 .message-start .message-bubble {
-  background-color: #2c2c44;
-  color: #fff;
+  background-color: var(--surface);
+  color: var(--text);
   border-bottom-left-radius: 0.3rem;
 }
 
@@ -91,8 +93,8 @@
   height: 34px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1.5px solid #444;
-  background-color: #2c2c44;
+  border: 1.5px solid var(--border);
+  background-color: var(--surface);
   flex-shrink: 0;
 }
 .avatar-img img {
@@ -104,7 +106,7 @@
 /* Time */
 .message-time {
   font-size: 0.7rem;
-  color: #888;
+  color: var(--muted);
   margin-top: 0.2rem;
   user-select: none;
 }
@@ -112,7 +114,7 @@
 /* Empty fallback */
 .empty-msg {
   text-align: center;
-  color: #888;
+  color: var(--muted);
   font-style: italic;
   margin: auto;
   font-size: 0.9rem;
@@ -125,9 +127,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #121216;
+  background-color: var(--bg);
 }
 
+/* Responsive remains same */
 /* ✅ Responsive Breakpoints for chat-container — matched to no-chat-container */
 
 /* Small phones and below ~ 320-480px */
